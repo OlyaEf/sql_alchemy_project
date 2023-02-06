@@ -117,7 +117,7 @@ def get_user_by_id(user_id: int):
         user.phone = user_data['phone']
         user.email = user_data['email']
         user.age = user_data['age']
-        db.session.delete(user)
+        db.session.add(user)
         db.session.commit()
         return '', 204
 
@@ -212,7 +212,7 @@ def offer(oid: int):
         # offer.id = offer_data['id']
         offer.order_id = offer_data['order_id']
         offer.executor_id = offer_data['executor_id']
-        db.session.delete(offer)
+        db.session.add(offer)
         db.session.commit()
         return '', 204
 
